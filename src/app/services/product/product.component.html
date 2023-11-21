@@ -3,14 +3,17 @@
       <tr>        
         <th scope="col">Name</th>
         <th scope="col">Company</th>
-        <th scope="col">Price</th>
+        <th scope="col">Price</th>        
+        <th scope="col">Remove Products</th>
       </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let product of products">
+        <tr *ngFor="let product of products; let i = index">
             <td>{{ product.name}}</td>
             <td>{{ product.company}}</td>
-            <td>{{ product.price}}</td>
+            <td>{{ product.price}}</td>            
+            <td><button class="btn btn-danger" (click)="deleteItem(i)">Delete</button></td>
         </tr>
     </tbody>
   </table>
+  <td><button class="btn btn-warning m-3" routerLink="../addItems">Add Products</button></td>

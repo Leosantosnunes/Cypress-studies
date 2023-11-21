@@ -1,15 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ProductService } from 'src/app/pages/service/product.service';
+
 
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
-export class ProductComponent {
-  public products = [
-    {name: "Macbook Pro", company: "Apple", price: 2499.00},
-    {name: "Ipad", company: "Apple", price: 499.00},
-    {name: "TV", company: "Samsung", price: 299.00}
+export class ProductComponent implements OnInit {
+  products: any[] = [];
 
-  ]
+  constructor(private productService: ProductService) {}
+
+  ngOnInit() {
+    this.productService.products$.subscribe(products => {
+      this.products = products;
+    });
+  }
+
+  deleteItem(index: number) {
+    this.productService.deleteProduct(index);
+  }
 }

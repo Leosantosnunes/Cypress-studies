@@ -10,6 +10,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ServiceComponent } from './pages/service/service.component';
 import { ProductComponent } from './services/product/product.component';
+import { AddItemsComponent } from './services/add-items/add-items.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,11 +22,13 @@ import { ProductComponent } from './services/product/product.component';
     HomeComponent,
     AboutComponent,
     ServiceComponent,
-    ProductComponent
+    ProductComponent,
+    AddItemsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
