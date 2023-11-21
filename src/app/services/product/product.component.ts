@@ -19,6 +19,8 @@ export class ProductComponent implements OnInit {
   }
 
   deleteItem(index: number) {
-    this.productService.deleteProduct(index);
+    this.productService.deleteProduct(index);    
   }
+
+  
 }

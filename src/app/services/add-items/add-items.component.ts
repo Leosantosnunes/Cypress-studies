@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProductService } from 'src/app/pages/service/product.service';
 
@@ -12,7 +12,7 @@ export class AddItemsComponent {
 
   productName: string = '';
   company: string = '';
-  price: number = 0;
+  price: number = 0;  
 
   constructor(private productService: ProductService, private route:Router) {}
 
@@ -25,8 +25,8 @@ export class AddItemsComponent {
     this.productService.addProduct(newProduct);
     this.productName = '';
     this.company = '';
-    this.price = 0;
+    this.price = 0;   
 
-    this.route.navigateByUrl('service');
+    //this.route.navigateByUrl('/service');
   }
 }
